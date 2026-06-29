@@ -1,0 +1,4 @@
+flet
+pg8000
+python-dotenv
+certifi
