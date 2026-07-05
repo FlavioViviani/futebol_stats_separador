@@ -290,4 +290,4 @@ import os
 porta = int(os.getenv("PORT", 8000))
 
 # Avisa o Flet para rodar como site web
-ft.app(target=main, view=ft.WEB_BROWSER, host="0.0.0.0", port=porta)
+ft.app(target=main, view=ft.AppView.WEB_BROWSER, host="0.0.0.0", port=porta)
