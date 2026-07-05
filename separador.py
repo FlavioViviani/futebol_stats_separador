@@ -30,7 +30,7 @@ def main(page: ft.Page):
     page.window_height = 800
     
     # Ajustes de borda para não colar na barra de notificações do celular
-    page.padding = ft.padding.only(top=50, left=20, right=20, bottom=20)
+    page.padding = ft.Padding.only(top=50, left=20, right=20, bottom=20)
     page.spacing = 5
 
     # Memória da sessão do aplicativo
