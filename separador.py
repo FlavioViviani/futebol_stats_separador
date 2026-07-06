@@ -173,7 +173,7 @@ def main(page: ft.Page):
                         ft.IconButton(ft.Icons.DELETE, icon_color=ft.Colors.GREY_500, icon_size=18, on_click=lambda e, pl=p: remover_atleta(pl))
                     ], alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
                     padding=5,
-                    border=ft.border.only(bottom=ft.border.BorderSide(1, ft.Colors.GREY_800))
+                    border=ft.Border(bottom=ft.border.BorderSide(1, ft.Colors.GREY_800))
                 )
             )
         page.update()
