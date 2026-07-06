@@ -122,12 +122,18 @@ def main(page: ft.Page):
     txt_nome = ft.TextField(label="Nome do Jogador", on_change=filtrar_nomes, expand=True)
     row_sugestoes = ft.Row(spacing=5)
     
+    def atualizar_posicao(e):
+        cg_posicao.value = e.control.value
+        page.update()
+
+    # 2. O RadioGroup agora monitoriza as mudanças usando o 'on_change'
     cg_posicao = ft.RadioGroup(
         content=ft.Row([
             ft.Radio(value="Ataque", label="Ataque (Frente)"),
             ft.Radio(value="Defesa", label="Defesa (Trás)"),
         ], alignment=ft.MainAxisAlignment.CENTER),
-        value="Ataque"
+        value="Ataque",
+        on_change=atualizar_posicao  # <-- Liga o componente visual à função de memória
     )
 
     col_lista_jogadores = ft.Column(spacing=5)
@@ -254,7 +260,7 @@ def main(page: ft.Page):
                         ft.Column(controls=rows_atletas, spacing=5)
                     ]),
                     padding=15,
-                    border=ft.border.all(1, ft.Colors.GREY_800),
+                    border=ft.Border.all(1, ft.Colors.GREY_800),
                     border_radius=10,
                     bgcolor=ft.Colors.GREY_900
                 )
